@@ -11,5 +11,8 @@ function getBandaraAsal(){
      global $data_bandara_asal;
      return $data_bandara_asal['data'];
 }
-
+function getBandaraTujuan(){
+     global $data_bandara_tujuan;
+     return $data_bandara_tujuan['data'];
+}
 ?>
