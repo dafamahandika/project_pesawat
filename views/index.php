@@ -4,9 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesawat</title>
+    <title>Pendaftaran Rute Penerbangan Pesawat</title>
+    
     <!-- Link to Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="../public/assets/css/style.css" rel="stylesheet">
     <style>
         .table-custom thead th {
             background-color: blue;
@@ -17,6 +24,7 @@
             background-color: #f2f2f2;
         }
     </style>
+
 </head>
 
 <body>
@@ -44,6 +52,75 @@
             </ul>
         </div>
     </nav>
+    <!-- Form -->
+    <div class="container contact-form">
+        <!-- Contact Image -->
+        <div class="contact-image">
+            <img src="../public/assets/img/travel.png" alt="Travel Image"/>
+        </div>
+        <?php
+        include('../app/app.php');
+        ?>
+        <!-- Contact Form -->
+        <form action="" method="">
+            <h3>Pendaftaran Rute Penerbangan</h3>
+            
+            <!-- Form Content -->
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <!-- Nama Maskapai -->
+                    <div class="form-group">
+                        <label for="nama">Maskapai</label>
+                        <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Maskapai" required>
+                    </div>
+                    
+                    <!-- Bandara Asal dan Bandara Tujuan -->
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label for="asal">Bandara Asal</label>
+                                <select name="bandara=_asal" id="asal" class="form-control" required>
+                                    <?php
+                                    $data = getBandaraAsal();
+                                    foreach ($data as $dt){
+                                        echo "<option value="."$dt[nama_bandara]".">".$dt['nama_bandara']."</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="tujuan">Bandara Tujuan</label>
+                                <select name="tujuan" id="tujuan" class="form-control" required>
+                                    <?php
+                                    $data = getBandaraTujuan();
+                                    foreach ($data as $dt){
+                                        echo "<option value="."$dt[nama_bandara]".">".$dt['nama_bandara']."</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Harga Tiket -->
+                    <div class="form-group mt-5">
+                        <label for="harga">Harga Tiket</label>
+                        <input type="text" name="harga" id="harga" class="form-control" placeholder="Harga Tiket" required>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tombol Kirim -->
+            <div class="row">
+                <div class="col-md-6 offset-md-3 text-center mt-5">
+                    <div class="form-group">
+                        <input type="submit" name="btnSubmit" class="btn btn-primary btnContact" value="Kirim">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- End form -->
 
     <!-- Tabel -->
     <div class="container mt-5">
@@ -117,118 +194,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
-</html>
-<head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Pendaftaran Rute Penerbangan Pesawat</title>
-</head>
-<?php
-    include('../app/app.php');
-?>
-<body>
-<form method="post" action="">
-    <h3>Bandara Asal</h3>
-    <select name="bandara_asal">
-        <?php
-            $data = getBandaraAsal();
-            foreach ($data as $dt){
-                echo "<option value='".$dt['nama_bandara']."'>".$dt['nama_bandara']."</option>";
-            }
-        ?>
-    </select>
-    <br>
-    <h3>Bandara Tujuan</h3>
-    <select name="bandara_tujuan">
-        <?php
-            $data = getBandaraTujuan();
-            foreach ($data as $dt){
-                echo "<option value='".$dt['nama_bandara']."'>".$dt['nama_bandara']."</option>";
-            }
-        ?>
-    </select>
-    <br><br>
-    <input type="submit" name="submit" value="Submit">
-</form>
-
-<?php
-include '../app/form.php';
-?>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link href="../public/assets/css/style.css" rel="stylesheet">
-</head>
-
-<body>
-    <div class="container contact-form">
-        <!-- Contact Image -->
-        <div class="contact-image">
-            <img src="../public/assets/img/travel.png" alt="Travel Image"/>
-        </div>
-
-        <!-- Contact Form -->
-        <form action="" method="">
-            <h3>Pendaftaran Rute Penerbangan</h3>
-            
-            <!-- Form Content -->
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <!-- Nama Maskapai -->
-                    <div class="form-group">
-                        <label for="nama">Maskapai</label>
-                        <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Maskapai" required>
-                    </div>
-                    
-                    <!-- Bandara Asal dan Bandara Tujuan -->
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col">
-                                <label for="asal">Bandara Asal</label>
-                                <select name="asal" id="asal" class="form-control" required>
-                                    <option value="CGK">Soekarno-Hatta (CGK)</option>
-                                    <option value="BDO">Husein-Sastranegara (BDO)</option>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <label for="tujuan">Bandara Tujuan</label>
-                                <select name="tujuan" id="tujuan" class="form-control" required>
-                                    <option value="DPS">Ngurah Rai (DPS)</option>
-                                    <option value="BTJ">Sultan Iskandarmuda (BTJ)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Harga Tiket -->
-                    <div class="form-group mt-5">
-                        <label for="harga">Harga Tiket</label>
-                        <input type="text" name="harga" id="harga" class="form-control" placeholder="Harga Tiket" required>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Tombol Kirim -->
-            <div class="row">
-                <div class="col-md-6 offset-md-3 text-center mt-5">
-                    <div class="form-group">
-                        <input type="submit" name="btnSubmit" class="btn btn-primary btnContact" value="Kirim">
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
 
     <!-- jQuery -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -257,4 +222,4 @@ include '../app/form.php';
         });
     </script>
 </body>
-</html>
+
