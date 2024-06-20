@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "nama_maskapai": "Adam Air",
+            "bandara_asal": "Soekarno-Hatta (CGK)",
+            "bandara_tujuan": "Sultan Iskandarmuda (BTJ)",
+            "harga_tiket": "2000000",
+            "pajak_asal": 50000,
+            "pajak_tujuan": 70000,
+            "total_pajak": 120000,
+            "total_harga": null
+        },
+        {
+            "nama_maskapai": "Adam Air",
+            "bandara_asal": "Soekarno-Hatta (CGK)",
+            "bandara_tujuan": "Sultan Iskandarmuda (BTJ)",
+            "harga_tiket": "2000000",
+            "pajak_asal": 50000,
+            "pajak_tujuan": 70000,
+            "total_pajak": 120000,
+            "total_harga": 2120000
+        }
+    ]
+}
