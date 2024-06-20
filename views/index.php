@@ -9,13 +9,19 @@
     include('../app/app.php');
 ?>
 <body>
-     <select>
-          <?php
-            $data = getBandaraAsal();
-            foreach ($data as $dt){
-                echo "<option>".$dt['nama_bandara']."</option>";
-            }
-          ?>
-     </select>
+     <form action="" method="POST">
+          <select name="bandara_asal">
+               <?php
+                 $data = getBandaraAsal();
+                 foreach ($data as $dt){
+                     echo "<option value='$dt[nama_bandara]'>".$dt['nama_bandara']."</option>";
+                 }
+               ?>
+          </select>
+          <button type="submit" name="submit">Submit</button>
+     </form>
+     <?php
+     include '../app/form.php';
+     ?>
 </body>
 </html>
