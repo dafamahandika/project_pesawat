@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pendaftaran Rute Penerbangan Pesawat</title>
+
+     <!-- Bootstrap CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Link to Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-        
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link href="../public/assets/css/style.css" rel="stylesheet">
+    <link href="../public/assets/css/style.css" rel="stylesheet"><link href="../public/assets/css/style.css" rel="stylesheet">
     <style>
         .table-custom thead th {
             background-color: blue;
@@ -62,7 +62,7 @@
         include('../app/app.php');
         ?>
         <!-- Contact Form -->
-        <form action="" method="">
+        <form action="" method="POST">
             <h3>Pendaftaran Rute Penerbangan</h3>
             
             <!-- Form Content -->
@@ -71,33 +71,35 @@
                     <!-- Nama Maskapai -->
                     <div class="form-group">
                         <label for="nama">Maskapai</label>
-                        <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Maskapai" required>
+                        <input type="text" name="maskapai" id="nama" class="form-control" placeholder="Nama Maskapai" required>
                     </div>
                     
                     <!-- Bandara Asal dan Bandara Tujuan -->
                     <div class="form-group">
                         <div class="row">
                             <div class="col">
-                                <label for="asal">Bandara Asal</label>
-                                <select name="bandara=_asal" id="asal" class="form-control" required>
-                                    <?php
-                                    $data = getBandaraAsal();
-                                    foreach ($data as $dt){
-                                        echo "<option value="."$dt[nama_bandara]".">".$dt['nama_bandara']."</option>";
-                                    }
-                                    ?>
-                                </select>
+                                <label for="bandara_asal">Bandara Asal
+                                    <select name="bandara_asal" id="bandara_asal" class="form-control">
+                                        <?php
+                                        $data = getBandaraAsal();
+                                        foreach ($data as $dt){
+                                            echo "<option value='".$dt['nama_bandara']."'>".$dt['nama_bandara']."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </label>
                             </div>
                             <div class="col">
-                                <label for="tujuan">Bandara Tujuan</label>
-                                <select name="tujuan" id="tujuan" class="form-control" required>
+                                <label for="bandara_tujuan">Bandara Tujuan
+                                <select name="bandara_tujuan" id="bandara_tujuan" class="form-control">
                                     <?php
                                     $data = getBandaraTujuan();
                                     foreach ($data as $dt){
-                                        echo "<option value="."$dt[nama_bandara]".">".$dt['nama_bandara']."</option>";
+                                        echo "<option value='"."$dt[nama_bandara]'".">".$dt['nama_bandara']."</option>";
                                     }
                                     ?>
                                 </select>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -114,14 +116,13 @@
             <div class="row">
                 <div class="col-md-6 offset-md-3 text-center mt-5">
                     <div class="form-group">
-                        <input type="submit" name="btnSubmit" class="btn btn-primary btnContact" value="Kirim">
+                        <button type="submit" name="btnSubmit" class="btn btn-primary btnContact">Kirim</button>
                     </div>
                 </div>
             </div>
         </form>
     </div>
     <!-- End form -->
-
     <!-- Tabel -->
     <div class="container mt-5">
         <h2 class="mb-4">Daftar Rute Tersedia</h2>
@@ -195,7 +196,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- jQuery -->
+<!-- jQuery -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <!-- Bootstrap JS -->

@@ -19,4 +19,17 @@ function getBandaraTujuan(){
      global $data_bandara_tujuan;
      return $data_bandara_tujuan['data'];
 }
+
+if(isset($_POST['btnSubmit'])){
+     $maskapai = $_POST['maskapai'];
+     $bandara_asal = $_POST['bandara_asal'];
+     $bandara_tujuan = $_POST['bandara_tujuan'];
+     $harga = $_POST['harga'];
+
+     var_dump($_POST);
+     // $pajak_bandara_tujuan = array_search($bandara_tujuan, $data_bandara_tujuan['data']);
+     // echo $pajak_bandara_tujuan;
+     // echo "<p>Bandara Asal: " . htmlspecialchars($bandara_asal) . "</p>";
+     // echo "<p>Bandara Tujuan: " . htmlspecialchars($bandara_tujuan) . "</p>";
+}
 ?>
