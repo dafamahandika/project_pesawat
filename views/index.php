@@ -34,12 +34,7 @@
 </form>
 
 <?php
-if (isset($_POST['submit'])) {
-    $bandaraAsal = $_POST['bandara_asal'];
-    $bandaraTujuan = $_POST['bandara_tujuan'];
-    echo "<p>Bandara Asal: " . htmlspecialchars($bandaraAsal) . "</p>";
-    echo "<p>Bandara Tujuan: " . htmlspecialchars($bandaraTujuan) . "</p>";
-}
+include '../app/form.php';
 ?>
 </body>
 </html>
