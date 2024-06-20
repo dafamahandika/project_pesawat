@@ -18,12 +18,12 @@ function getBandaraAsal(){
      // Mengembalikan array data bandara asal
      return $data_bandara_asal['data'];
 }
-
-// Fungsi untuk mendapatkan data bandara tujuan
+// function untuk return array bandara_tujuan
 function getBandaraTujuan(){
      global $data_bandara_tujuan;
      return $data_bandara_tujuan['data'];
 }
+
 
 // Fungsi untuk mendapatkan pajak dari bandara tertentu
 // Parameter $nama_bandara adalah nama bandara yang dicari
