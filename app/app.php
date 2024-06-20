@@ -9,11 +9,12 @@ $data_bandara_tujuan = json_decode($bandara_tujuan_json, true);
 
 global $data_bandara_tujuan;
 
-// function untuk return array bandara_tujuan
+// function untuk return array bandara_asal
 function getBandaraAsal(){
      global $data_bandara_asal;
      return $data_bandara_asal['data'];
 }
+// function untuk return array bandara_tujuan
 function getBandaraTujuan(){
      global $data_bandara_tujuan;
      return $data_bandara_tujuan['data'];
