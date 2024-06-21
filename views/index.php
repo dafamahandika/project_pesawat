@@ -12,7 +12,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Pesawat</a>
+        <a class="navbar-brand" href="#">Rute Penerbangan</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 class="mb-4">Daftar Rute Tersedia</h2>
+        <h2 class="text-center">Pendaftaran Rute Penerbangan</h2>
         <form method="post" action="">
             <div class="form-group">
                 <label for="nama_maskapai">Nama Maskapai</label>
@@ -72,9 +72,9 @@
             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
         </form>
 
-        <h2 class="mt-5">Data Rute Penerbangan</h2>
+        <h2 class="mt-5 text-center">Data Rute Penerbangan</h2>
         <table class="table table-hover table-custom">
-            <thead>
+            <thead class="text-center">
                 <tr>
                     <th scope="col">Maskapai</th>
                     <th scope="col">Asal Penerbangan</th>
@@ -88,7 +88,6 @@
             </thead>
             <tbody>
                 <?php
-                    include '../app/form.php';
                     if(isset($_POST['submit'])){
                         $nama_maskapai = $_POST['nama_maskapai'];
                         $bandara_asal = $_POST['bandara_asal'];
@@ -100,17 +99,7 @@
                         $total_pajak = $pajak_asal + $pajak_tujuan;
                         $total_harga = $harga_tiket + $total_pajak;
 
-                        echo "<tr>
-                                <td>$nama_maskapai</td>
-                                <td>$bandara_asal</td>
-                                <td>$bandara_tujuan</td>
-                                <td>$harga_tiket</td>
-                                <td>$pajak_asal</td>
-                                <td>$pajak_tujuan</td>
-                                <td>$total_pajak</td>
-                                <td>$total_harga</td>
-                              </tr>";
-
+                        
                         // Simpan data ke dalam file JSON
                         $rute_penerbangan = [
                             'nama_maskapai' => $nama_maskapai,
@@ -123,6 +112,26 @@
                             'total_harga' => $total_harga
                         ];
                         saveToJSON($rute_penerbangan);
+
+
+                    }
+                    $rute_penerbangan = getRutePenerbangan();
+                    if($rute_penerbangan){
+                        sort($rute_penerbangan);
+                        foreach ($rute_penerbangan as $dt) {     
+                            echo "<tr>";
+                            echo    "<td class='text-center'>$dt[nama_maskapai]</td>";
+                            echo    "<td class='text-center'>$dt[bandara_asal]</td>";
+                            echo    "<td class='text-center'>$dt[bandara_tujuan]</td>";
+                            echo    "<td class='text-center'>$dt[harga_tiket]</td>";
+                            echo    "<td class='text-center'>$dt[pajak_asal]</td>";
+                            echo    "<td class='text-center'>$dt[pajak_tujuan]</td>";
+                            echo    "<td class='text-center'>$dt[total_pajak]</td>";
+                            echo    "<td class='text-center'>$dt[total_harga]</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='8' class='text-center'>Data rute penerbangan tidak ditemukan</tr>";
                     }
                 ?>
             </tbody>

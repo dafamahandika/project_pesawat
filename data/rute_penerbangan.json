@@ -1,24 +1,44 @@
 {
     "data": [
         {
-            "nama_maskapai": "Adam Air",
-            "bandara_asal": "Soekarno-Hatta (CGK)",
-            "bandara_tujuan": "Sultan Iskandarmuda (BTJ)",
-            "harga_tiket": "2000000",
-            "pajak_asal": 50000,
+            "nama_maskapai": "Air Asia",
+            "bandara_asal": "Husein Sastranegara (BDO)",
+            "bandara_tujuan": "Hasanuddin (UPG)",
+            "harga_tiket": "1000000",
+            "pajak_asal": 30000,
             "pajak_tujuan": 70000,
-            "total_pajak": 120000,
-            "total_harga": null
+            "total_pajak": 100000,
+            "total_harga": 1100000
         },
         {
-            "nama_maskapai": "Adam Air",
-            "bandara_asal": "Soekarno-Hatta (CGK)",
-            "bandara_tujuan": "Sultan Iskandarmuda (BTJ)",
+            "nama_maskapai": "Super Air Jet",
+            "bandara_asal": "Abdul Rachman Saleh (MLG)",
+            "bandara_tujuan": "Inanwatan (INX)",
             "harga_tiket": "2000000",
-            "pajak_asal": 50000,
+            "pajak_asal": 40000,
+            "pajak_tujuan": 40000,
+            "total_pajak": 80000,
+            "total_harga": 2080000
+        },
+        {
+            "nama_maskapai": "Citilink",
+            "bandara_asal": "Juanda (SUB)",
+            "bandara_tujuan": "Hasanuddin (UPG)",
+            "harga_tiket": "10000",
+            "pajak_asal": 40000,
             "pajak_tujuan": 70000,
-            "total_pajak": 120000,
-            "total_harga": 2120000
+            "total_pajak": 110000,
+            "total_harga": 120000
+        },
+        {
+            "nama_maskapai": "Batik Air",
+            "bandara_asal": "Abdul Rachman Saleh (MLG)",
+            "bandara_tujuan": "Inanwatan (INX)",
+            "harga_tiket": "500000000",
+            "pajak_asal": 40000,
+            "pajak_tujuan": 40000,
+            "total_pajak": 80000,
+            "total_harga": 500080000
         }
     ]
 }

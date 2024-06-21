@@ -9,8 +9,6 @@ $bandara_tujuan_json = file_get_contents('../data/bandara_tujuan.json',true);
 $data_bandara_asal = json_decode($bandara_asal_json, true);
 $data_bandara_tujuan = json_decode($bandara_tujuan_json, true);
 
-global $data_bandara_tujuan;
-
 // function untuk return array bandara_tujuan
 function getBandaraAsal(){
      // Menggunakan variabel global untuk mengakses data bandara asal
@@ -47,5 +45,16 @@ function getPajakBandara($nama_bandara, $data_bandara) {
      $rute_data = json_decode(file_get_contents($file), true); // Membaca isi file JSON yang ada dan mengubahnya menjadi array
      $rute_data['data'][] = $data;
      file_put_contents($file, json_encode($rute_data, JSON_PRETTY_PRINT));
+ }
+
+// Fungsi untuk menampilakan data rute penerbangan yang sudah disimpan ke file rute_penerbangan.json  
+ function getRutePenerbangan(){
+     $file = '../data/rute_penerbangan.json';
+     $file_json = file_get_contents($file, true);
+     $rute_penerbangan = json_decode($file_json, true);
+     if(!$rute_penerbangan){
+        return 0;
+     }
+     return $rute_penerbangan['data'];
  }
 ?>
