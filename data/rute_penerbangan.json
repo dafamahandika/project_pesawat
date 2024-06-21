@@ -39,6 +39,16 @@
             "pajak_tujuan": 40000,
             "total_pajak": 80000,
             "total_harga": 500080000
+        },
+        {
+            "nama_maskapai": "Garuda Indonesia",
+            "bandara_asal": "Juanda (SUB)",
+            "bandara_tujuan": "Hasanuddin (UPG)",
+            "harga_tiket": "2000000",
+            "pajak_asal": 40000,
+            "pajak_tujuan": 70000,
+            "total_pajak": 110000,
+            "total_harga": 2110000
         }
     ]
 }
