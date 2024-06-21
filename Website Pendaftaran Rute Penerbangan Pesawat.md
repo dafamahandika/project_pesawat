@@ -66,9 +66,9 @@ POJECT_PESAWAT/
 ├── app/
 │   ├── app.php
 ├── data/
- |  ├── bandara_asal.json
-│   ├── bandara_tujuan.json
-|   ├── rute_penerbangan.json
+|  ├── bandara_asal.json
+│  ├── bandara_tujuan.json
+|  ├── rute_penerbangan.json
 
 ├── includes/
 │   └── functions.php
